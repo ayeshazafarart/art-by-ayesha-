@@ -2,21 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"   # where uploaded files go in repo
-public_folder: "/images/uploads" # how they’re accessed in the site
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "index.html"
-        label: "Homepage"
-        name: "home"
-        fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
-          - { label: "Intro Text", name: "intro", widget: "text" }
-
   - name: "originals"
     label: "Original Paintings"
     folder: "content/originals"
