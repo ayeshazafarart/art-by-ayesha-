@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/uploads"   # where uploaded files go in repo
+public_folder: "/images/uploads" # how they’re accessed in the site
 
 collections:
   - name: "pages"
@@ -13,6 +13,46 @@ collections:
         label: "Homepage"
         name: "home"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
           - { label: "Intro Text", name: "intro", widget: "text" }
+
+  - name: "originals"
+    label: "Original Paintings"
+    folder: "content/originals"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "prints"
+    label: "Prints"
+    folder: "content/prints"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "commissions"
+    label: "Commissions & Murals"
+    folder: "content/commissions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name", name: "client", widget: "string" }
+      - { label: "Project Details", name: "details", widget: "markdown" }
+      - { label: "Reference Image", name: "image", widget: "image", required: false }
